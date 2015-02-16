@@ -17,7 +17,7 @@ Assumes that the data has been downloaded and unzipped into the working director
 ### Description
 All project tasks are performed in this script.
 
-1. Loads the descriptive information first like subject and activity mapping. 
+1. Loads the descriptive information for subject and activity mapping. 
 2. Then loads the test and training data. 
 3. Once the data is loaded the script adds the proper labels and adds the subject and activitiy data. 
 4. At this point there are two data frames that contain test and training data with subject and activity columns.
