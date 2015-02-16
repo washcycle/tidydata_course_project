@@ -1,8 +1,20 @@
-## Script Descriptions
+# Getting and Cleaning Data Course Project 2015
+
+## Data
+
+source:
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+
+provided zip file:
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
+## Scripts
 **run_analysis.R**
 
+### Assumptions
 Assumes that the data has been downloaded and unzipped into the working directory.
 
+### Description
 1. Loads the descriptive information first like subject and activity mapping. 
 2. Then loads the test and training data. 
 3. Once the data is loaded the script adds the proper labels and adds the subject and activitiy data. 
