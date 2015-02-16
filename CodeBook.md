@@ -19,6 +19,9 @@ the run_analysis.R script.
 * **fdata_set** - filtered data set containing only mean and standard deviation measurements
 * **tidydata** - final tidy data set with filtered data containing only the mean of the mean and standard deviation data for each subject and their respective activities. For this set a total of observations 180 observations from thirty subjects and six activites for each subject (3 * 6 = 180).
 
+## Units
+Gyro measurements are in units of radians/second.
+The acceleration units (shortened to 'acc' in column names) are in standard gravity units 'g'.
 
 ## Transformations
 
