@@ -5,7 +5,7 @@
 source:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
-provided zip file:
+course provided zip file:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 ## Scripts
@@ -22,5 +22,6 @@ Assumes that the data has been downloaded and unzipped into the working director
 5. The test and training data frames are then merged.
 6. The data is filtered down to only mean and standard deviation measurements.
 7. Aggregate is used to get the mean for each filtered measurement with respect to all subjects and all activites for each subject resulting in a data frame of 180 total observations.
+8. Saves the filtered tidy data set into tidydata.txt
 
 
