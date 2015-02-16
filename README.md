@@ -19,7 +19,7 @@ All project tasks are performed in this script.
 
 1. Loads the descriptive information for subject and activity mapping. 
 2. Then loads the test and training data. 
-3. Once the data is loaded the script adds the proper labels and adds the subject and activitiy data. 
+3. Once the data is loaded the script adds the proper labels and adds new columns for subject and activitiy data. 
 4. At this point there are two data frames that contain test and training data with subject and activity columns.
 5. The test and training data frames are then merged.
 6. The data is filtered down to only mean and standard deviation measurements.
