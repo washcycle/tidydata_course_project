@@ -52,59 +52,19 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 
 
-<div id="getting-and-cleaning-data-course-project-feb-2015" class="section level1">
-<h1>Getting and Cleaning Data Course Project Feb 2015</h1>
-<p>This code book describes the variables, packages, and transformations performed in the run_analysis.R script.</p>
-<div id="assumptions" class="section level2">
-<h2>Assumptions</h2>
+<div id="script-descriptions" class="section level2">
+<h2>Script Descriptions</h2>
+<p><strong>run_analysis.R</strong></p>
+<p>Assumes that the data has been downloaded and unzipped into the working directory.</p>
 <ol style="list-style-type: decimal">
-<li>The data in the intertia folders (raw data) is not used as the y_train.txt and x_test.txt files contain calulated data. This project only calulated measurements which are contained in the y_train.txt and x_test.txt files.</li>
+<li>Loads the descriptive information first like subject and activity mapping.</li>
+<li>Then loads the test and training data.</li>
+<li>Once the data is loaded the script adds the proper labels and adds the subject and activitiy data.</li>
+<li>At this point there are two data frames that contain test and training data with subject and activity columns.</li>
+<li>The test and training data frames are then merged.</li>
+<li>The data is filtered down to only mean and standard deviation measurements.</li>
+<li>Aggregate is used to get the mean for each filtered measurement with respect to all subjects and all activites for each subject resulting in a data frame of 180 total observations.</li>
 </ol>
-</div>
-<div id="variables" class="section level2">
-<h2>Variables</h2>
-<ul>
-<li><strong>activities</strong> - activity ID to activity text label mapping, loaded from activity_labels.txt</li>
-<li><strong>features</strong> - descriptive column names for test and training data, loaded from features.txt</li>
-<li><strong>test_set</strong> - test set data from X_test.txt, columns names set using features data</li>
-<li><strong>training_set</strong> - training set data from X_train.txt, columns names set using features data</li>
-<li><strong>training_subject_labels</strong> - subject ID to training_set observation mapping</li>
-<li><strong>test_subject_labels</strong> - subject ID to test_set observation mapping</li>
-<li><strong>test_set_activities</strong> - activity to test_set data set</li>
-<li><strong>training_set_activities</strong> - activity to training_set data set</li>
-<li><strong>test_set</strong> - test set data with subject and activity variables</li>
-<li><strong>training_set</strong> - training set data with subject and activity variables</li>
-<li><strong>fdata_set</strong> - filtered data set containing only mean and standard deviation measurements</li>
-<li><strong>tidydata</strong> - final tidy data set with filtered data containing only the mean of the mean and standard deviation data for each subject and their respective activities. For this set a total of observations 180 observations from thirty subjects and six activites for each subject (3 * 6 = 180).</li>
-</ul>
-</div>
-<div id="transformations" class="section level2">
-<h2>Transformations</h2>
-<div id="subjects" class="section level3">
-<h3>Subjects</h3>
-<p>The subject data for each data set is added as a new variable column, ‘subject’.</p>
-</div>
-<div id="descriptive-labels" class="section level3">
-<h3>Descriptive labels</h3>
-<p>The test_set_activities and training_set_activities data frames are looped through by the activityID in the activites variable. If an activity ID is found the numeric value is swapped with the correct descriptive label from the activity data frame variable.</p>
-<p>Then the activity columns are converted into factors.</p>
-<p>The test_set_activites and training_set_activities now with descriptive labeling is added as a new variable column to their respective data sets.</p>
-</div>
-<div id="merged-data-sets" class="section level3">
-<h3>Merged data sets</h3>
-<p>merge is used to merge the test and training_set into data_set data frame.</p>
-</div>
-</div>
-<div id="filtering" class="section level2">
-<h2>Filtering</h2>
-<p>data_set is filtered by looking for columns names with only, ‘mean’ or ‘std’ in them, ignoring case. The filtered data is saved into the fdata_set data frame.</p>
-<p>The filtered data set is then arranged by subject.</p>
-</div>
-<div id="tidy-data-output" class="section level2">
-<h2>Tidy Data Output</h2>
-<p>The mean of each measurement is caluted with respect to the subject and activity for each subject using the aggregate function. To differentiate the columns I append ‘.Mean’ to the end of each measurement variable.</p>
-<p>write.table is called to save the tidydata save the data to a file called tidydata.txt</p>
-</div>
 </div>
 
 

@@ -2,6 +2,7 @@ library(plyr)
 
 ## Getting and Cleaning Data John Hopkins Coursera Course Project
 # Data is from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+# Data must be unzipped into the current working directory
 
 ## 1 Merges the training and the test sets to create one data set.
 
@@ -66,6 +67,5 @@ tidydata <- aggregate(. ~ subject + activity, data = fdata_set, mean)
 names(tidydata)[c(-1,-2)] <- sapply(names(tidydata)[c(-1,-2)], paste, 'Mean', sep=".")
 
 # arrange by subject then by activity with respect to each subject
-tidydata <- arrange(tidydata, subject, activity))
-
+tidydata <- arrange(tidydata, subject, activity)
 write.table(tidydata, "tidydata.txt", row.name=FALSE)
