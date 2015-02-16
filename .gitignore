@@ -1,0 +1,4 @@
+*.swp
+.Rhistory
+*.zip
+UCI\ HAR\ Dataset
